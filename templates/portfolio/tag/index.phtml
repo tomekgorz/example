@@ -1,0 +1,34 @@
+<section class="works">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2 class="title_section white-section"><br/><span>Realizacje.</span></h2>
+            </div>
+        </div>
+        <?php if($this->categories): ?>
+        <div class="categories">
+            <a href="javascript:;" title="All" data-category="all" class="btn btn-project btn-project-header active">All</a>
+            <?php foreach ($this->categories as $one): ?>
+            <a href="javascript:;" title="<?php echo $one['title'] ?>" data-category="<?php echo $one['link'] ?>" class="btn btn-project btn-project-header"><?php  echo $one['title']; ?></a>
+            <?php endforeach; ?>
+            
+        </div>
+        <?php endif; ?>
+        <?php if($this->projects): ?>
+        <div class="row">
+            <?php foreach ($this->projects as $one): ?>
+            <div class="col-sm-12 col-md-4 works_box" name="<?php echo $one['title_link'] ?>">
+                <a href="<?php echo $this->url(array("meta_link_project" => $one['meta_link']),'portfolio_project', true) ?>" title="<?php echo $one['title'] ?>" class="box"><img src="<?php echo $this->imageUrl($one['photo'],0); ?>" alt="<?php echo $one['title'] ?>"/><div class="apla"><h3><?php echo $one['title'] ?></h3></div></a>
+            </div>
+            <?php endforeach; ?>
+            
+        </div>
+        <?php else: ?>
+        <div class="row">
+            <div class="col-xs-12">
+                Przykro mi lecz na chwilę obecną nie mogę się pochwalić żadnym z pośród moich projektów.
+            </div>
+        </div>
+        <?php endif; ?>
+    </div>
+</section>

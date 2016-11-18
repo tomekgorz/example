@@ -1,0 +1,48 @@
+<section class="detail">
+    <?php if($this->photo): ?>
+    <ul class="portfolio_bx">
+        <?php foreach($this->photo as $one): ?>
+        <li>
+
+            <img src="<?php echo $this->imageUrl($one['photo'],0); ?>" alt="<?php echo $one['title'] ?>"/>
+        </li>
+        <?php endforeach; ?>
+    </ul>
+    <?php endif; ?>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="title_project">
+                    <h1><?php echo $this->project['title'] ?></h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="detail_description">
+                <?php echo $this->project['text']; ?>   
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <ul class="detail_item">
+                    <li>
+                        <h2>Data</h2>
+                        <?php echo $this->project['date_crt'] ?>
+                    </li>
+                    <li>
+                        <h2>Kategoria</h2>
+                        <?php echo $this->project['title_link'] ?>
+                    </li>
+                    <li>
+                        <h2>Klient</h2>
+                        <?php echo $this->project['field_2'] ?>
+                    </li>
+                    <li>
+                        <h2>Technologie</h2>
+                        <?php echo $this->project['field_3'] ?>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
